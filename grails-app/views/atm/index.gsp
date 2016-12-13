@@ -1,10 +1,5 @@
 TODO: add a form here
-<html>
-<head>
-    <title>ATM input</title>>
-</head>
 
-<body>
 <g:form controller="atm">
 
     <label>Action:</label>
@@ -26,5 +21,3 @@ TODO: add a form here
 
     <g:actionSubmit value="Confirm"/>
 </g:form>
-</body>
-</html>
