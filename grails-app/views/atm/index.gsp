@@ -4,7 +4,6 @@ TODO: add a form here
 
     <label>Action:</label>
     <g:select name="command" from="${['Remain', 'Deposit', 'Withdrawal']}">
-
     </g:select>
 
     <label>Currency:</label>
