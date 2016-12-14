@@ -1,7 +1,6 @@
 TODO: add a form here
 
 <g:form controller="atm">
-
     <label>Action:</label>
     <g:select name="command" from="${['Remain', 'Deposit', 'Withdrawal']}">
     </g:select>
