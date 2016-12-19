@@ -1,21 +1,13 @@
 package com.test.atm
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
 
-@Configuration
 class AtmCommandFactory {
 
     private final MoneyStorage moneyStorage
 
     AtmCommandFactory(@Autowired MoneyStorage moneyStorage) {
         this.moneyStorage = moneyStorage
-    }
-
-    @Bean
-    commandBean() {
-        AtmCommand commandBean
     }
 
     AtmCommand create(String action) {
