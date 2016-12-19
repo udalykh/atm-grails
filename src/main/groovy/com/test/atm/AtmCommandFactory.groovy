@@ -14,6 +14,10 @@ class AtmCommandFactory {
     }
 
     @Bean
+    commandBean() {
+        AtmCommand commandBean
+    }
+
     AtmCommand create(String action) {
         switch (CommandType.getCommandType(action)) {
             case CommandType.REMAININGS:
