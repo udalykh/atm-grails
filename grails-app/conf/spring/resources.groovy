@@ -5,6 +5,6 @@ import com.test.atm.AtmCommandFactory
 import com.test.atm.MoneyStorage
 
 beans = {
-    commandBean(AtmCommandFactory)
-    moneyStorageBean(MoneyStorage)
+    commandBean(AtmCommandFactory) {}
+    moneyStorageBean(MoneyStorage) {}
 }
