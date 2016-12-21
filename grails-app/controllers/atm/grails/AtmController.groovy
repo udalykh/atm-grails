@@ -25,6 +25,7 @@ class AtmController {
     }
 
     def index() {
+
         try {
             switch (CommandType.getCommandType(command)) {
                 case CommandType.REMAININGS:
