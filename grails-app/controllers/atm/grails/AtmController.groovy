@@ -7,41 +7,27 @@ class AtmController {
     def moneyStorage
     def atmCommandFactory
 
-
-    Map runCommand(String command, String... arguments) {
-        try {
-            AtmCommand atmCommand = atmCommandFactory.create(command)
-            atmCommand.execute(arguments)
-        } catch (ignore) {
-            println('ERROR')
-        }
-        null
-    }
-
     def index() {
         String command = ''
         String currency = ''
         String value = ''
         String number = ''
         String amount = ''
-        String[] arguments
+        Map<BankNote, Integer> response = [:]
         try {
             switch (CommandType.getCommandType(command)) {
                 case CommandType.REMAININGS:
-                    arguments = []
+                    response = new RequestRemainings(moneyStorage).execute()
                     break
                 case CommandType.ADD:
-                    arguments = [currency, value, number]
+                    response = new DepositCommand(moneyStorage).execute(currency, value, number)
                     break
                 case CommandType.WITHDRAW:
-                    arguments = [currency, amount]
+                    response = new WithdrawalCommand(moneyStorage).execute(currency, amount)
                     break
-                default:
-                    arguments = []
             }
 
-            Map<BankNote, Integer> response = runCommand(command, arguments)
-            if (response == null) {
+            if (!response) {
                 throw new AtmStateException('NULL CAPTURED')
             }
             [response: response.entrySet()]
