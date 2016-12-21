@@ -7,12 +7,6 @@ class AtmController {
     def moneyStorage
     def atmCommandFactory
 
-    String command
-    String currency
-    String value
-    String number
-    String amount
-    String[] arguments
 
     Map runCommand(String command, String... arguments) {
         try {
@@ -25,7 +19,12 @@ class AtmController {
     }
 
     def index() {
-
+        String command = ''
+        String currency = ''
+        String value = ''
+        String number = ''
+        String amount = ''
+        String[] arguments
         try {
             switch (CommandType.getCommandType(command)) {
                 case CommandType.REMAININGS:
