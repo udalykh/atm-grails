@@ -1,9 +1,9 @@
 package com.test.atm
 
 enum CommandType {
-    REMAININGS('?'),
-    ADD('+'),
-    WITHDRAW('-')
+    REMAININGS('REMAININGS'),
+    ADD('ADD'),
+    WITHDRAW('WITHDRAW')
 
     private final String command
 
