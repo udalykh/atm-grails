@@ -1,28 +1,40 @@
-<g:form name="atm-window" controller="atm">
+<g:form name="atm-window" controller="atm" action="index" method="post">
     <div align="center">
         <br/>
         <br/>
         <label>Action:</label>
-        <g:select name="command" from="${['Remains', 'Deposit', 'Withdrawal']}">
+        <g:select name="command" from="${com.test.atm.CommandType.values()}">
         </g:select>
 
         <label>Currency:</label>
-        <g:textField name="currency"/><br/>
+        <g:select name="currency" from="${com.test.atm.Currency.values()}">
+        </g:select>
+        <br/>
         <br/>
 
         <label>Value:</label>
-        <g:textField type="number" name="value"/>
+        <g:field type="number" name="value" min="0" value="0"/>
 
         <label>Number:</label>
-        <g:textField name="number"/>
+        <g:field type="number" name="number" min="0" value="0"/>
 
         <label>Amount:</label>
-        <g:textField name="amount"/><br/>
+        <g:field type="number" name="amount" min="0" value="0"/>
+        <br/>
         <br/>
 
-        <g:actionSubmit value="Confirm"/>
-        <label>Result:</label>
+        <g:actionSubmit value="Confirm" action="index" class="btn btn-default"/>
 
-        <g:textField name="amount"/><br/>
+        <hr>
+        <label>Result:</label><br>
+        <g:if test="${error}">
+            ERROR
+        </g:if>
+        <g:else>
+            <g:each in="${response}">
+                ${it.key} ${it.value}<br>
+            </g:each>
+        </g:else>
+        <br/>
     </div>
 </g:form>
