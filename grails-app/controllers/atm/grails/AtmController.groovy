@@ -5,7 +5,6 @@ import com.test.atm.*
 class AtmController {
 
     def moneyStorage
-    def atmCommandFactory
 
     def index() {
         String command = ''
@@ -26,7 +25,6 @@ class AtmController {
                     response = new WithdrawalCommand(moneyStorage).execute(currency, amount)
                     break
             }
-
             if (!response) {
                 throw new AtmStateException('NULL CAPTURED')
             }
