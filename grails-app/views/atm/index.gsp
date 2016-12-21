@@ -3,11 +3,12 @@
         <br/>
         <br/>
         <label>Action:</label>
-        <g:select name="command" from="${com.test.atm.CommandType.values()}">
+        <g:select name="command" from="${com.test.atm.CommandType.values()}"
+                  value="${com.test.atm.CommandType.REMAININGS}">
         </g:select>
 
         <label>Currency:</label>
-        <g:select name="currency" from="${com.test.atm.Currency.values()}">
+        <g:select name="currency" from="${com.test.atm.Currency.values()}" value="${com.test.atm.Currency.USD}">
         </g:select>
         <br/>
         <br/>
@@ -22,9 +23,7 @@
         <g:field type="number" name="amount" min="0" value="0"/>
         <br/>
         <br/>
-
         <g:actionSubmit value="Confirm" action="index" class="btn btn-default"/>
-
         <hr>
         <label>Result:</label><br>
         <g:if test="${error}">
