@@ -7,7 +7,14 @@ class AtmController {
     def moneyStorage
     def atmCommandFactory
 
-    Map runCommand(String command, String[] arguments) {
+    String command
+    String currency
+    String value
+    String number
+    String amount
+    String[] arguments
+
+    Map runCommand(String command, String... arguments) {
         try {
             AtmCommand atmCommand = atmCommandFactory.create(command)
             atmCommand.execute(arguments)
@@ -19,13 +26,6 @@ class AtmController {
 
     def index() {
         try {
-            String command = ''
-            String currency = ''
-            String value = ''
-            String number = ''
-            String amount = ''
-            String[] arguments = []
-
             switch (CommandType.getCommandType(command)) {
                 case CommandType.REMAININGS:
                     arguments = []
@@ -41,6 +41,9 @@ class AtmController {
             }
 
             Map<BankNote, Integer> response = runCommand(command, arguments)
+            if (response == null) {
+                throw new AtmStateException('NULL CAPTURED')
+            }
             [response: response.entrySet()]
         } catch (AtmStateException e) {
             log.error("Error while ATM operation: ${e.message}")
