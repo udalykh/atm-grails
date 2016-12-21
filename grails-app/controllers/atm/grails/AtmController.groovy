@@ -4,11 +4,8 @@ import com.test.atm.*
 
 class AtmController {
 
-    MoneyStorage moneyStorage
-    AtmCommandFactory atmCommandFactory
-
-    def commandBean
-    def moneyStorageBean
+    def moneyStorage
+    def atmCommandFactory
 
     Map runCommand(String command, String[] arguments) {
         try {
