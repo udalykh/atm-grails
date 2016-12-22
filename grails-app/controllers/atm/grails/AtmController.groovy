@@ -6,11 +6,11 @@ class AtmController {
 
     def moneyStorage
 
-    String command = ''
-    String currency = ''
-    String value = ''
-    String number = ''
-    String amount = ''
+    String command = params["command"]
+    String currency = params["currency"]
+    String value = params["value"]
+    String number = params["number"]
+    String amount = params["amount"]
 
     def index() {
 
