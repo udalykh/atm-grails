@@ -3,24 +3,23 @@
         <br/>
         <br/>
         <label>Action:</label>
-        <g:select name="command" from="${com.test.atm.CommandType.values()}"
-                  value="${com.test.atm.CommandType.REMAININGS}">
+        <g:select name="command" from="${com.test.atm.CommandType.values()}">
         </g:select>
 
         <label>Currency:</label>
-        <g:select name="currency" from="${com.test.atm.Currency.values()}" value="${com.test.atm.Currency.USD}">
+        <g:select name="currency" from="${com.test.atm.Currency.values()}">
         </g:select>
         <br/>
         <br/>
 
         <label>Value:</label>
-        <g:field type="number" name="value" min="0" value="0"/>
+        <g:field type="number" name="value" min="0"/>
 
         <label>Number:</label>
-        <g:field type="number" name="number" min="0" value="0"/>
+        <g:field type="number" name="number" min="0"/>
 
         <label>Amount:</label>
-        <g:field type="number" name="amount" min="0" value="0"/>
+        <g:field type="number" name="amount" min="0"/>
         <br/>
         <br/>
 
