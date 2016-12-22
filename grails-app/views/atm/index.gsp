@@ -1,4 +1,4 @@
-<g:form name="atm-window" controller="atm" action="index" method="post">
+<g:form name="atm-window" controller="atm" action="index" method="post" id="atm">
     <div align="center">
         <br/>
         <br/>
