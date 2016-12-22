@@ -6,12 +6,14 @@ class AtmController {
 
     def moneyStorage
 
+    String command = ''
+    String currency = ''
+    String value = ''
+    String number = ''
+    String amount = ''
+
     def index() {
-        String command = ''
-        String currency = ''
-        String value = ''
-        String number = ''
-        String amount = ''
+
         Map<BankNote, Integer> response = [:]
         try {
             switch (CommandType.getCommandType(command)) {
