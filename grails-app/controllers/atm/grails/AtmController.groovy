@@ -13,7 +13,6 @@ class AtmController {
     String amount = params["amount"]
 
     def index() {
-
         Map<BankNote, Integer> response = [:]
         try {
             switch (CommandType.getCommandType(command)) {
