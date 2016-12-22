@@ -23,6 +23,7 @@
         <g:field type="number" name="amount" min="0" value="0"/>
         <br/>
         <br/>
+
         <g:actionSubmit value="Confirm" action="index" class="btn btn-default"/>
         <hr>
         <label>Result:</label><br>
