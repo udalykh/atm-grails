@@ -11,11 +11,13 @@
     <div align="center">
         <br/>
         <br/>
-        <strong>Action:</strong><g:select name="command" from="${com.test.atm.CommandType.values()}">
-    </g:select>
+        <strong>Action:   </strong>
+        <g:select name="command" from="${com.test.atm.CommandType.values()}">
+        </g:select>
+        Currency:
+        <g:select name="currency" from="${com.test.atm.Currency.values()}">
+        </g:select>
 
-    Currency:   <g:select name="currency" from="${com.test.atm.Currency.values()}">
-    </g:select>
         <br/>
         <br/>
         Value:   <g:field type="number" name="value" min="0"/>
