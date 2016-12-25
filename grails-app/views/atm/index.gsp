@@ -20,9 +20,11 @@
 
         <br/>
         <br/>
+
         Value:   <g:field type="number" name="value" min="0"/>
         Number:   <g:field type="number" name="number" min="0"/>
         Amount:   <g:field type="number" name="amount" min="0"/>
+
         <br/>
         <br/>
 
