@@ -25,11 +25,12 @@
 
         Value:   <g:field type="number" name="value" min="0"/>
         Number:   <g:field type="number" name="number" min="0"/>
-        Amount:   <g:field type="number" name="amount" min="0"/><br/>
+        Amount:   <g:field type="number" name="amount" min="0"/>
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
         <br/>
 
         <g:actionSubmit value="GO" action="index" class="btn btn-primary">
-            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+
         </g:actionSubmit>
         <hr>
 
