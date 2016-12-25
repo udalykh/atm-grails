@@ -11,7 +11,7 @@
     <div align="center">
         <style>
         body {
-            background-color: #D0FCDE;
+            background-color: #E9FCE4;
         }</style>
         <br/>
         <br/>
@@ -20,16 +20,12 @@
         </g:select>
         Currency:
         <g:select name="currency" from="${com.test.atm.Currency.values()}">
-        </g:select>
-
-        <br/>
+        </g:select><br/>
         <br/>
 
         Value:   <g:field type="number" name="value" min="0"/>
         Number:   <g:field type="number" name="number" min="0"/>
-        Amount:   <g:field type="number" name="amount" min="0"/>
-
-        <br/>
+        Amount:   <g:field type="number" name="amount" min="0"/><br/>
         <br/>
 
         <g:actionSubmit value="GO" action="index" class="btn btn-primary">
