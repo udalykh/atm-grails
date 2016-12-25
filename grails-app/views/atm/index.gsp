@@ -32,11 +32,11 @@
         <br/>
         <br/>
 
-        <g:actionSubmit value="GO" action="index" class="btn btn-primary btn-lg">
+        <g:actionSubmit value="GO" action="index" class="btn btn-primary">
             <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
         </g:actionSubmit>
         <hr>
-        <em>Result:</em><br>
+        <h3>Result:</h3><br>
         <g:if test="${error}">
             ERROR
         </g:if>
