@@ -9,9 +9,13 @@
 <body>
 <g:form name="atm-window" controller="atm" action="index" method="post" id="atm">
     <div align="center">
+        <style>
+        body {
+            background-color: #D0FCDE;
+        }</style>
         <br/>
         <br/>
-        <strong>Action:   </strong>
+        <strong>Action:</strong>
         <g:select name="command" from="${com.test.atm.CommandType.values()}">
         </g:select>
         Currency:
