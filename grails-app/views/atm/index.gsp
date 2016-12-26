@@ -16,8 +16,12 @@
         <br/>
         <br/>
         <strong>Action:</strong>
-        <g:select name="command" class="form-control" from="${com.test.atm.CommandType.values()}">
-        </g:select>
+
+        <div class="input-group">
+            <div class="input-group-addon">-></div>
+            <g:select name="command" class="form-control" from="${com.test.atm.CommandType.values()}">
+            </g:select>
+        </div>
         Currency:
         <g:select name="currency" class="form-control" from="${com.test.atm.Currency.values()}">
         </g:select><br/>
@@ -27,6 +31,7 @@
         Number:   <g:field class="form-control" type="number" name="number" min="0" placeholder="Number of banknotes"/>
         Amount:   <g:field class="form-control" type="number" name="amount" min="0" placeholder="Amount of currency"/>
         <br/>
+        <br/>
 
         <g:actionSubmit value="GO" action="index" class="btn btn-primary">
             <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
@@ -34,7 +39,7 @@
         <br/>
         <hr>
 
-        <h3>Result:</h3><br>
+        <h3>Result:</h3>
         <em>
             <g:if test="${error}">
                 ERROR
