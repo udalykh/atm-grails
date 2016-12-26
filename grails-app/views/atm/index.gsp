@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<g:form name="atm-window" controller="atm" action="index" method="post" id="atm">
+<g:form name="atm-window" controller="atm" class="form-inline" action="index" method="post" id="atm">
     <div align="center">
         <style>
         body {
@@ -16,10 +16,10 @@
         <br/>
         <br/>
         <strong>Action:</strong>
-        <g:select name="command" from="${com.test.atm.CommandType.values()}">
+        <g:select name="command" class="form-control" from="${com.test.atm.CommandType.values()}">
         </g:select>
         Currency:
-        <g:select name="currency" from="${com.test.atm.Currency.values()}">
+        <g:select name="currency" class="form-control" from="${com.test.atm.Currency.values()}">
         </g:select><br/>
         <br/>
 
