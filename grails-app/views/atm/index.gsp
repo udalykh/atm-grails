@@ -14,7 +14,7 @@
             background-color: #ECFCE4;
         }</style>
         <br/>
-        <img src="bismuthlogo.png" alt="bismuth-logo">
+        <img src="bismuthlogo.jpg" alt="bismuth-logo">
         <br/>
         <strong>Action:</strong>
 
