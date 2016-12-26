@@ -23,9 +23,9 @@
         </g:select><br/>
         <br/>
 
-        Value:   <g:field type="number" name="value" min="0"/>
-        Number:   <g:field type="number" name="number" min="0"/>
-        Amount:   <g:field type="number" name="amount" min="0"/>
+        Value:   <g:field class="form-control" type="number" name="value" min="0" placeholder="Value of banknote"/>
+        Number:   <g:field class="form-control" type="number" name="number" min="0" placeholder="Number of banknotes"/>
+        Amount:   <g:field class="form-control" type="number" name="amount" min="0" placeholder="Amount of currency"/>
         <br/>
 
         <g:actionSubmit value="GO" action="index" class="btn btn-primary">
