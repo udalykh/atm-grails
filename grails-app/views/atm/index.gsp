@@ -14,7 +14,7 @@
             background-color: #ECFCE4;
         }</style>
         <br/>
-        <img src="bismuthlogo.jpg" alt="bismuth-logo">
+        <img src="bismuthlogo.png" alt="bismuth-logo">
         <br/>
         <strong>Action:</strong>
 
@@ -27,7 +27,6 @@
         <g:select name="currency" class="form-control" from="${com.test.atm.Currency.values()}">
         </g:select><br/>
         <br/>
-
 
         Value:   <g:field class="form-control" type="number" name="value" min="0" placeholder="Value of banknote"/>
         Number:   <g:field class="form-control" type="number" name="number" min="0" placeholder="Number of banknotes"/>
