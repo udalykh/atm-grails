@@ -12,9 +12,11 @@
         <style>
         body {
             background-color: #ECFCE4;
+            background: url(/shop/images/bismuth.bmp) repeat-y;
         }</style>
+
         <br/>
-        <img src="atm-grails/grails-app/shop/images/bismuthlogo.png" alt="bismuth-logo"/>
+        <img src="shop/images/bismuthlogo.png" alt="bismuth-logo"/>
         <br/>
         <strong>Action:</strong>
 
