@@ -14,7 +14,7 @@
             background-color: #ECFCE4;
         }</style>
         <br/>
-        <img src="/shop/images/bismuthlogo.png" alt="bismuth-logo"/>
+        <img src="atm-grails/grails-app/shop/images/bismuthlogo.png" alt="bismuth-logo"/>
         <br/>
         <strong>Action:</strong>
 
