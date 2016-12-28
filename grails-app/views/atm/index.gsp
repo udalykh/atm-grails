@@ -11,12 +11,13 @@
     <div align="center">
         <style>
         body {
-            background-color: #ECFCE4;
-            background: url(/shop/images/bismuth.bmp) repeat-y;
+            background: #ECFCE4 url(/shop/images/bismuth.bmp) repeat-y;
         }</style>
-
         <br/>
-        <img src="shop/images/bismuthlogo.png" alt="bismuth-logo"/>
+        <br/>
+        <br/>
+        <img src="/shop/images/biusmuthlogo.png" alt="bismuth-logo"/>
+        <br/>
         <br/>
         <strong>Action:</strong>
 
@@ -39,7 +40,6 @@
             <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
         </g:actionSubmit>
         <br/>
-        <hr>
 
         <h3>Result:</h3>
         <em>
