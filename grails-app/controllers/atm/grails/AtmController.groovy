@@ -12,7 +12,6 @@ class AtmController {
         String value = params["value"]
         String number = params["number"]
         String amount = params["amount"]
-
         Map<BankNote, Integer> response = [:]
         try {
             switch (CommandType.getCommandType(command)) {
