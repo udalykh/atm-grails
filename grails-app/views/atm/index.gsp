@@ -16,7 +16,7 @@
         <br/>
         <br/>
         <br/>
-        <img src="/shop/images/biusmuthlogo.png" alt="bismuth-logo"/>
+        <img src="/shop/images/bismuthlogo.png" alt="bismuth-logo"/>
         <br/>
         <br/>
         <strong>Action:</strong>
