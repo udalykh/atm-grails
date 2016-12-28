@@ -11,12 +11,12 @@
     <div align="center">
         <style>
         body {
-            background: #ECFCE4 url(/shop/images/bismuth.bmp) repeat-y;
+            background: #ECFCE4 url(/atm/images/bismuth.bmp) repeat-y;
         }</style>
         <br/>
         <br/>
         <br/>
-        <img src="/shop/images/bismuthlogo.png" alt="bismuth-logo"/>
+        <img src="/atm/images/bismuthlogo.png" alt="bismuth-logo"/>
         <br/>
         <br/>
         <strong>Action:</strong>
