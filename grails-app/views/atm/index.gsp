@@ -18,6 +18,9 @@
         <br/>
         <img src="/atm/images/bismuthlogo.png" alt="bismuth-logo"/>
         <br/>
+        <h5>
+            Welcome to Bismuth ATM.
+        </h5>
         <br/>
         <strong>Action:</strong>
 
