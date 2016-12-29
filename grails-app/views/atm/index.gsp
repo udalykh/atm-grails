@@ -40,7 +40,6 @@
                            placeholder="Amount of currency"/>
         <br/>
         <br/>
-
         <g:actionSubmit value="GO" action="index" class="btn btn-primary">
             <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
         </g:actionSubmit>
