@@ -11,7 +11,7 @@
     <div align="center">
         <style>
         body {
-            background: #ECFCE4 url(images/bismuth.bmp) repeat-y;
+            background: #ECFCE4 url(/images/bismuth.bmp) repeat-y;
         }</style>
         <br/>
         <br/>
