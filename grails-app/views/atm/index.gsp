@@ -12,11 +12,13 @@
         <style>
         body {
             background: #ECFCE4 url(assets/bismuth.bmp) repeat-y;
-        }</style>
+        }
+        </style>
         <br/>
         <br/>
         <br/>
         <g:img file="bismuthlogo.png"/>
+        <br/>
         <br/>
         <h5>
             Welcome to Bismuth ATM.
