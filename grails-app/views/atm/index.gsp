@@ -16,7 +16,7 @@
         <br/>
         <br/>
         <br/>
-        <img src="/images/bismuthlogo.png" alt="bismuth-logo"/>
+        <img src="${resource(dir:'images', file:'bismuthlogo.png')}" alt="bismuth-logo"/>
         <br/>
         <h5>
             Welcome to Bismuth ATM.
