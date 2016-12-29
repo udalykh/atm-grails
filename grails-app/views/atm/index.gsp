@@ -31,11 +31,13 @@
             <g:select name="command" class="form-control" from="${com.test.atm.CommandType.values()}">
             </g:select>
         </div>
+        <g:set var="isRemains" value="${params["command"] == com.test.atm.CommandType.REMAININGS.}"/>
         Currency:
         <g:select name="currency" class="form-control" from="${com.test.atm.Currency.values()}">
         </g:select><br/>
+        <g:textField name="check" value="${isRemains}"/>
         <br/>
-        Value:   <g:field class="form-control" type="number" name="value" min="0" placeholder="Value of banknote"/>
+        Value:   <g:field class="form-control" type="number" name="value" min="0" placeholder="Value of banknote" disabled="${isRemains}"/>
         Number:   <g:field class="form-control" type="number" name="number" min="0"
                            placeholder="Number of banknotes"/>
         Amount:   <g:field class="form-control" type="number" name="amount" min="0"
