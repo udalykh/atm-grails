@@ -16,10 +16,8 @@
         </style>
         <br/>
         <br/>
-        <br/>
         <g:img file="bismuthlogo.png"/>
-        <br/>
-        <br/>
+        <br/><br/>
         <h5>
             Welcome to Bismuth ATM.
         </h5>
@@ -50,6 +48,7 @@
             Amount:   <g:field class="form-control" type="number" name="amount" min="0"
                                placeholder="Amount of currency"/></div>
         <br/>
+        <br/>
 
         <div class="btn-group">
             <button type="button" class="btn btn-default">7</button>
@@ -71,7 +70,8 @@
             <button type="button" class="btn btn-default">3</button>
         </div>
         <br/>
-        <button type="button" class="btn btn-default">0</button><br/>
+        <button type="button" class="btn btn-default">0</button>
+        <br/>
         <a data-toggle="tooltip" data-placement="top" title="Click to submit the action">
             <g:actionSubmit value="GO" action="index" class="btn btn-primary">
                 <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
