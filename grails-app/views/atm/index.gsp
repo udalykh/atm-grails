@@ -5,7 +5,6 @@
     <title>Bismuth ATM</title>
     %{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">--}%
 </head>
-
 <body>
 <g:form name="atm-window" controller="atm" class="form-inline" action="index" method="post" id="atm">
     <div align="center">
@@ -14,6 +13,7 @@
             background: #ECFCE4 url(assets/bismuth.bmp) repeat-y;
         }
         </style>
+        <br/>
         <br/>
         <br/>
         <br/>
