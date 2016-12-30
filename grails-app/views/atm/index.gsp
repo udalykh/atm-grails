@@ -17,7 +17,6 @@
         <br/>
         <br/>
         <br/>
-        <br/>
         <g:img file="bismuthlogo.png"/>
         <br/>
         <br/>
@@ -51,12 +50,34 @@
             Amount:   <g:field class="form-control" type="number" name="amount" min="0"
                                placeholder="Amount of currency"/></div>
         <br/>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">7</button>
+            <button type="button" class="btn btn-default">8</button>
+            <button type="button" class="btn btn-default">9</button>
+        </div>
         <br/>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">4</button>
+            <button type="button" class="btn btn-default">5</button>
+            <button type="button" class="btn btn-default">6</button>
+        </div>
+        <br/>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">1</button>
+            <button type="button" class="btn btn-default">2</button>
+            <button type="button" class="btn btn-default">3</button>
+        </div>
+        <br/>
+        <button type="button" class="btn btn-default">0</button><br/>
         <a data-toggle="tooltip" data-placement="top" title="Click to submit the action">
             <g:actionSubmit value="GO" action="index" class="btn btn-primary">
                 <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
             </g:actionSubmit></a>
         <br/>
+
 
         <h3>Result:</h3>
         <em>
