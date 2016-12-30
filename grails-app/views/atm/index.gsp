@@ -5,6 +5,7 @@
     <title>Bismuth ATM</title>
     %{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">--}%
 </head>
+
 <body>
 <g:form name="atm-window" controller="atm" class="form-inline" action="index" method="post" id="atm">
     <div align="center">
@@ -35,12 +36,20 @@
         <g:select name="currency" class="form-control" from="${com.test.atm.Currency.values()}">
         </g:select><br/>
         <br/>
-        Value:   <g:field class="form-control" type="number" name="value" min="0"
-                          placeholder="Value of banknote"/>
-        Number:   <g:field class="form-control" type="number" name="number" min="0"
-                           placeholder="Number of banknotes"/>
-        Amount:   <g:field class="form-control" type="number" name="amount" min="0"
-                           placeholder="Amount of currency"/>
+
+        <div class="form-group">
+            Value:   <g:field class="form-control" type="number" name="value" min="0"
+                              placeholder="Value of banknote"/>
+        </div>
+
+        <div class="form-group">
+            Number:   <g:field class="form-control" type="number" name="number" min="0"
+                               placeholder="Number of banknotes"/>
+        </div>
+
+        <div class="form-group">
+            Amount:   <g:field class="form-control" type="number" name="amount" min="0"
+                               placeholder="Amount of currency"/></div>
         <br/>
         <br/>
         <g:actionSubmit value="GO" action="index" class="btn btn-primary">
