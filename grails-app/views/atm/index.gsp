@@ -43,18 +43,19 @@
         </div>
 
         <div class="form-group">
-            Number:   <g:field class="form-control" type="number" name="number" min="0"
-                               placeholder="Number of banknotes"/>
-        </div>
+            Number:
+            <g:field class="form-control" type="number" name="number" min="0"
+                     placeholder="Number of banknotes"/></div>
 
         <div class="form-group">
             Amount:   <g:field class="form-control" type="number" name="amount" min="0"
                                placeholder="Amount of currency"/></div>
         <br/>
         <br/>
-        <g:actionSubmit value="GO" action="index" class="btn btn-primary">
-            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
-        </g:actionSubmit>
+        <a data-toggle="tooltip" data-placement="top" title="Click to submit the action">
+            <g:actionSubmit value="GO" action="index" class="btn btn-primary">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
+            </g:actionSubmit></a>
         <br/>
 
         <h3>Result:</h3>
