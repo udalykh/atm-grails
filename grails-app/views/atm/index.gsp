@@ -25,7 +25,6 @@
         </h5>
         <br/>
         <strong>Action:</strong>
-
         <div class="input-group">
             <div class="input-group-addon"><span class="glyphicon glyphicon-arrow-right"></span></div>
             <g:select name="command" id="command" class="form-control" from="${com.test.atm.CommandType.values()}">
