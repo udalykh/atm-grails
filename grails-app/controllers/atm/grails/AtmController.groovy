@@ -12,9 +12,6 @@ class AtmController {
         String value = params["value"]
         String number = params["number"]
         String amount = params["amount"]
-        boolean valueCheck = command == 'REMAININGS' | command == 'WITHDRAW'
-        boolean numberCheck = command == 'REMAININGS' | command == 'WITHDRAW'
-        boolean amountCheck = command == 'REMAININGS' | command == 'ADD'
         Map<BankNote, Integer> response = [:]
         try {
             switch (CommandType.getCommandType(command)) {
