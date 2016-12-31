@@ -14,13 +14,16 @@ class AtmUtils {
             throw new AtmStateException('WRONG NUMBER OF PARAMETERS')
         }
     }
-    static boolean valueDisable (String command){
+
+    static boolean valueDisable(String command) {
         return command == 'REMAININGS' | command == 'WITHDRAW'
     }
-    static boolean numberDisable (String command){
+
+    static boolean numberDisable(String command) {
         return command == 'REMAININGS' | command == 'WITHDRAW'
     }
-    static boolean amountDisable (String command){
+
+    static boolean amountDisable(String command) {
         return command == 'REMAININGS' | command == 'ADD'
     }
 }
