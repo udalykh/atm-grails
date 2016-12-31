@@ -78,7 +78,6 @@
             </g:actionSubmit></a>
         <br/>
 
-
         <h3>Result:</h3>
         <em>
             <g:if test="${error}">
