@@ -37,8 +37,7 @@
 
         <div class="form-group">
             Value:   <g:field class="form-control" type="number" name="value" min="0"
-                              placeholder="Value of banknote"
-                              disabled="${valuedisable == com.test.atm.CommandType.REMAININGS)as boolean}"/>
+                              placeholder="Value of banknote"/>
         </div>
 
         <div class="form-group">
