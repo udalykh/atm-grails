@@ -14,9 +14,6 @@ class AtmController {
         String amount = params["amount"]
         Map<BankNote, Integer> response = [:]
         try {
-            [valuedisable: AtmUtils.valueDisable(command)]
-            [numberdisable: AtmUtils.numberDisable(command)]
-            [amountdisable: AtmUtils.amountDisable(command)]
             switch (CommandType.getCommandType(command)) {
                 case CommandType.REMAININGS:
                     response = new RequestRemainings(moneyStorage).execute()
