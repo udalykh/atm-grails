@@ -26,7 +26,8 @@
 
         <div class="input-group">
             <div class="input-group-addon"><span class="glyphicon glyphicon-arrow-right"></span></div>
-            <g:select name="command" id="command" class="form-control" from="${com.test.atm.CommandType.values()}">
+            <g:select name="command" id="command" class="form-control" from="${com.test.atm.CommandType.values()}"
+                      value="${com.test.atm.CommandType.REMAININGS}">
             </g:select>
         </div>
         Currency:
@@ -49,6 +50,7 @@
                                placeholder="Amount of currency"/></div>
         <br/>
         <br/>
+
         <div class="btn-group">
             <button type="button" class="btn btn-default">7</button>
             <button type="button" class="btn btn-default">8</button>
@@ -78,17 +80,23 @@
         <br/>
 
         <h3>Result:</h3>
-        <em>
-            <g:if test="${error}">
-                ERROR
-            </g:if>
-            <g:else>
-                <g:each in="${response}">
-                    ${it.key} ${it.value}<br>
-                </g:each>
-            </g:else>
-        </em>
-        <br/>
+
+        <div class="col-md-2 col-md-offset-5">
+            <table class="table table-condensed">
+                <tbody>
+                <div style="overflow:auto;">
+                    <g:if test="${error}">
+                        <tr>ERROR</tr>
+                    </g:if>
+                    <g:else>
+                        <g:each in="${response}">
+                            <tr><td>${it.key} ${it.value}</td></tr>
+                        </g:each>
+                    </g:else>
+                </div>
+                </tbody>
+            </table>
+        </div><br/>
     </div>
 </g:form>
 </body>
