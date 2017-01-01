@@ -49,7 +49,6 @@
                                placeholder="Amount of currency"/></div>
         <br/>
         <br/>
-
         <div class="btn-group">
             <button type="button" class="btn btn-default">7</button>
             <button type="button" class="btn btn-default">8</button>
