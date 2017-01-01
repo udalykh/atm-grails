@@ -7,13 +7,13 @@ class AtmController {
     def moneyStorage
 
     def index() {
-        String command = params["command"]
-        String currency = params["currency"]
-        String value = params["value"]
-        String number = params["number"]
-        String amount = params["amount"]
         Map<BankNote, Integer> response = [:]
         try {
+            String command = params["command"]
+            String currency = params["currency"]
+            String value = params["value"]
+            String number = params["number"]
+            String amount = params["amount"]
             switch (CommandType.getCommandType(command)) {
                 case CommandType.REMAININGS:
                     response = new RequestRemainings(moneyStorage).execute()
