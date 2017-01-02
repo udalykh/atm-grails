@@ -36,17 +36,17 @@
         <br/>
 
         <div class="form-group">
-            Value:   <g:field class="form-control" type="number" name="value" min="0"
+            Value:   <g:field class="form-control" type="number" name="value" id="value" min="0"
                               placeholder="Value of banknote"/>
         </div>
 
         <div class="form-group">
             Number:
-            <g:field class="form-control" type="number" name="number" min="0"
+            <g:field class="form-control" type="number" name="number" id="number" min="0"
                      placeholder="Number of banknotes"/></div>
 
         <div class="form-group">
-            Amount:   <g:field class="form-control" type="number" name="amount" min="0"
+            Amount:   <g:field class="form-control" type="number" name="amount" id="amount" min="0"
                                placeholder="Amount of currency"/></div>
         <br/>
         <br/>
@@ -71,6 +71,7 @@
             <button type="button" class="btn btn-default">3</button>
         </div>
         <br/>
+
         <div class="btn-group">
             <button type="button" class="btn btn-default">0</button>
             <button type="button" class="btn btn-default">000</button>
