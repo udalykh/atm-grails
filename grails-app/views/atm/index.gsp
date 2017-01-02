@@ -52,29 +52,29 @@
         <br/>
 
         <div class="btn-group">
-            <button type="button" class="btn btn-default">7</button>
-            <button type="button" class="btn btn-default">8</button>
-            <button type="button" class="btn btn-default">9</button>
+            <button type="button" name="seven" class="btn btn-default">7</button>
+            <button type="button" name="eight" class="btn btn-default">8</button>
+            <button type="button" name="nine" class="btn btn-default">9</button>
         </div>
         <br/>
 
         <div class="btn-group">
-            <button type="button" class="btn btn-default">4</button>
-            <button type="button" class="btn btn-default">5</button>
-            <button type="button" class="btn btn-default">6</button>
+            <button type="button" name="four" class="btn btn-default">4</button>
+            <button type="button" name="five" class="btn btn-default">5</button>
+            <button type="button" name="six" class="btn btn-default">6</button>
         </div>
         <br/>
 
         <div class="btn-group">
-            <button type="button" class="btn btn-default">1</button>
-            <button type="button" class="btn btn-default">2</button>
-            <button type="button" class="btn btn-default">3</button>
+            <button type="button" name="one" class="btn btn-default">1</button>
+            <button type="button" name="two" class="btn btn-default">2</button>
+            <button type="button" name="three" class="btn btn-default">3</button>
         </div>
         <br/>
 
         <div class="btn-group">
-            <button type="button" class="btn btn-default">0</button>
-            <button type="button" class="btn btn-default">000</button>
+            <button type="button" name="zero" class="btn btn-default">0</button>
+            <button type="button" name="triplezero" class="btn btn-default">000</button>
         </div>
         <br/>
         <a data-toggle="tooltip" data-placement="top" title="Click to submit the action">
