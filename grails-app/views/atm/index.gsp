@@ -30,24 +30,26 @@
                       value="${com.test.atm.CommandType.REMAININGS}">
             </g:select>
         </div>
-        Currency:
+        <label id="currencylabel" for="currency">Currency:</label>
         <g:select name="currency" class="form-control" from="${com.test.atm.Currency.values()}">
         </g:select><br/>
         <br/>
 
         <div class="form-group">
-            Value:   <g:field class="form-control" type="number" name="value" id="value" min="0"
-                              placeholder="Value of banknote"/>
+            <label id="valuelabel" for="value">Value:</label>
+            <g:field class="form-control" type="number" name="value" id="value" min="0"
+                     placeholder="Value of banknote"/>
         </div>
 
         <div class="form-group">
-            Number:
+            <label id="numberlabel" for="number">Number:</label>
             <g:field class="form-control" type="number" name="number" id="number" min="0"
                      placeholder="Number of banknotes"/></div>
 
         <div class="form-group">
-            Amount:   <g:field class="form-control" type="number" name="amount" id="amount" min="0"
-                               placeholder="Amount of currency"/></div>
+            <label id="amountlabel" for="amount">Amount:</label>
+            <g:field class="form-control" type="number" name="amount" id="amount" min="0"
+                     placeholder="Amount of currency"/></div>
         <br/>
         <br/>
 
