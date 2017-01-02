@@ -71,7 +71,10 @@
             <button type="button" class="btn btn-default">3</button>
         </div>
         <br/>
-        <button type="button" class="btn btn-default">0</button>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">0</button>
+            <button type="button" class="btn btn-default">000</button>
+        </div>
         <br/>
         <a data-toggle="tooltip" data-placement="top" title="Click to submit the action">
             <g:actionSubmit value="GO" action="index" class="btn btn-primary">
