@@ -77,6 +77,7 @@
         <div class="btn-group">
             <button type="button" name="zero" id="zero" class="btn btn-default">0</button>
             <button type="button" name="triplezero" id="triplezero" class="btn btn-default">000</button>
+            <button type="button" name="backspace" id="backspace" class="btn btn-default">C</button>
         </div>
         <br/>
         <a data-toggle="tooltip" data-placement="top" title="Click to submit the action">
