@@ -40,17 +40,19 @@
             <g:field class="form-control" type="number" name="value" id="value" min="0"
                      placeholder="Value of banknote"/>
         </div>
+        <g:set var="valuechange" value="false"/>
 
         <div class="form-group">
             <label id="numberlabel" for="number">Number:</label>
             <g:field class="form-control" type="number" name="number" id="number" min="0"
                      placeholder="Number of banknotes"/></div>
+        <g:set var="numberchange" value="false"/>
 
         <div class="form-group">
             <label id="amountlabel" for="amount">Amount:</label>
             <g:field class="form-control" type="number" name="amount" id="amount" min="0"
                      placeholder="Amount of currency"/></div>
-        <br/>
+        <g:set var="amountchange" value="false"/>
         <br/>
 
         <div class="btn-group">
