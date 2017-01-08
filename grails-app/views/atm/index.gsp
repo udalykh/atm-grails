@@ -27,12 +27,14 @@
         <div class="input-group">
             <div class="input-group-addon"><span class="glyphicon glyphicon-arrow-right"></span></div>
             <g:select name="command" id="command" class="form-control" from="${com.test.atm.CommandType.values()}"
-                      value="${com.test.atm.CommandType.REMAININGS}">
+                      value="REMAININGS">
             </g:select>
         </div>
-        <label id="currencylabel" for="currency">Currency:</label>
-        <g:select name="currency" class="form-control" from="${com.test.atm.Currency.values()}">
-        </g:select><br/>
+        <span class="label-div">
+            <label id="currencylabel" for="currency">Currency:</label>
+            <g:select name="currency" class="form-control" from="${com.test.atm.Currency.values()}">
+            </g:select><br/>
+        </span>
         <br/>
 
         <div class="form-group">
@@ -55,44 +57,51 @@
         <g:set var="amountchange" value="false"/>
         <br/>
 
-        <div class="btn-group">
-            <button type="button" name="seven" id="seven" class="btn btn-default">7</button>
-            <button type="button" name="eight" id="eight" class="btn btn-default">8</button>
-            <button type="button" name="nine" id="nine" class="btn btn-default">9</button>
-        </div>
-        <br/>
+        <div class="keyboard">
+            <div class="btn-group">
+                <button type="button" name="seven" id="seven" class="btn btn-default">7</button>
+                <button type="button" name="eight" id="eight" class="btn btn-default">8</button>
+                <button type="button" name="nine" id="nine" class="btn btn-default">9</button>
+            </div>
+            <br/>
+
+            <div class="btn-group">
+                <button type="button" name="four" id="four" class="btn btn-default">4</button>
+                <button type="button" name="five" id="five" class="btn btn-default">5</button>
+                <button type="button" name="six" id="six" class="btn btn-default">6</button>
+            </div>
+            <br/>
+
+            <div class="btn-group">
+                <button type="button" name="one" id="one" class="btn btn-default">1</button>
+                <button type="button" name="two" id="two" class="btn btn-default">2</button>
+                <button type="button" name="three" id="three" class="btn btn-default">3</button>
+            </div>
+
+            <br/>
+
+            <div class="btn-group">
+                <button type="button" name="zero" id="zero" class="btn btn-default">0</button>
+                <button type="button" name="triplezero" id="triplezero" class="btn btn-default">000</button>
+            </div></div>
+
+        <div style="margin-top: 15px;"></div>
 
         <div class="btn-group">
-            <button type="button" name="four" id="four" class="btn btn-default">4</button>
-            <button type="button" name="five" id="five" class="btn btn-default">5</button>
-            <button type="button" name="six" id="six" class="btn btn-default">6</button>
-        </div>
-        <br/>
-
-        <div class="btn-group">
-            <button type="button" name="one" id="one" class="btn btn-default">1</button>
-            <button type="button" name="two" id="two" class="btn btn-default">2</button>
-            <button type="button" name="three" id="three" class="btn btn-default">3</button>
-        </div>
-        <br/>
-
-        <div class="btn-group">
-            <button type="button" name="zero" id="zero" class="btn btn-default">0</button>
-            <button type="button" name="triplezero" id="triplezero" class="btn btn-default">000</button>
             <button type="button" name="backspace" id="backspace" class="btn btn-default">C</button>
-        </div>
-        <br/>
-        <a data-toggle="tooltip" data-placement="top" title="Click to submit the action">
-            <g:actionSubmit value="GO" action="index" class="btn btn-primary">
+            %{--<a data-toggle="tooltip" data-placement="top" title="Click to submit the action">--}%
+            <g:actionSubmit value="GO" action="index" class="btn btn-primary" title="Click to submit the action">
                 <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
-            </g:actionSubmit></a>
+            </g:actionSubmit>
+        </div>
         <br/>
 
         <h3>Result:</h3>
 
         <div class="col-md-2 col-md-offset-5">
             <table class="table table-condensed">
-                <tbody>
+                <tbody id="resultId">
+
                 <div style="overflow:auto;">
                     <g:if test="${error}">
                         <tr>ERROR</tr>
@@ -108,5 +117,7 @@
         </div><br/>
     </div>
 </g:form>
+%{--<g:link action="ajax" elementId="ajax">Click me</g:link>--}%
+%{--<g:remoteLink action="ajax" id="1">Remote link</g:remoteLink>--}%
 </body>
 </html>
