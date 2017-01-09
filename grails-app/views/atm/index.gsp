@@ -99,21 +99,25 @@
         <h3>Result:</h3>
 
         <div class="col-md-2 col-md-offset-5">
-            <table class="table table-condensed">
-                <tbody id="resultId">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-condensed">
+                        <tbody id="resultId">
 
-                <div style="overflow:auto;">
-                    <g:if test="${error}">
-                        <tr>ERROR</tr>
-                    </g:if>
-                    <g:else>
-                        <g:each in="${response}">
-                            <tr><td>${it.key} ${it.value}</td></tr>
-                        </g:each>
-                    </g:else>
+                        <div style="overflow:auto;">
+                            <g:if test="${error}">
+                                <tr>ERROR</tr>
+                            </g:if>
+                            <g:else>
+                                <g:each in="${response}">
+                                    <tr><td>${it.key} ${it.value}</td></tr>
+                                </g:each>
+                            </g:else>
+                        </div>
+                        </tbody>
+                    </table>
                 </div>
-                </tbody>
-            </table>
+            </div>
         </div><br/>
     </div>
 </g:form>
