@@ -1,6 +1,7 @@
 package atm.grails
 
 import com.test.atm.*
+import grails.converters.JSON
 
 class AtmController {
 
@@ -24,9 +25,16 @@ class AtmController {
                 case CommandType.WITHDRAW:
                     response = new WithdrawalCommand(moneyStorage).execute(currency, amount)
                     break
+                default:
+                    response = new RequestRemainings(moneyStorage).execute()
+                    break
             }
             if (!response) {
-                throw new AtmStateException('NULL CAPTURED')
+                if (command == "REMAININGS") {
+                    [response: "EMPTY"]
+                } else {
+                    throw new AtmStateException('NULL CAPTURED')
+                }
             }
             [response: response.entrySet()]
         } catch (AtmStateException e) {
@@ -34,4 +42,14 @@ class AtmController {
             [error: true]
         }
     }
+    /*
+    def result() {
+
+    }
+
+    def ajax() {
+        def dummy = [ id: 3]
+        render dummy as JSON
+    }
+    */
 }
