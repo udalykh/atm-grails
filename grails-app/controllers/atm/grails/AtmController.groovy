@@ -42,14 +42,7 @@ class AtmController {
             [error: true]
         }
     }
-    /*
+
     def result() {
-
     }
-
-    def ajax() {
-        def dummy = [ id: 3]
-        render dummy as JSON
-    }
-    */
 }
