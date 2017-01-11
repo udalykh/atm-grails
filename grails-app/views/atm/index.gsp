@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<g:form name="atm-window" controller="atm" class="form-inline" action="index" method="post" id="atm">
+<g:form name="atm-window" controller="atm" class="form-inline" action="index" method="post">
     <div align="center">
         <style>
         body {
@@ -89,23 +89,21 @@
 
         <div class="btn-group">
             <button type="button" name="backspace" id="backspace" class="btn btn-default">C</button>
-        %{--<a data-toggle="tooltip" data-placement="top" title="Click to submit the action">--}%
+            %{--<a data-toggle="tooltip" data-placement="top" title="Click to submit the action">--}%
             <g:actionSubmit value="GO" id="go" action="index" class="btn btn-primary"
                             title="Click to submit the action">
                 <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
             </g:actionSubmit>
         </div><br/>
-        %{----}%
-        <g:submittoremote update="response" url="[controller:'atm', action:'index']" value="GO 2">
-        GO 2
-        </g:submittoremote>
+
+        <g:submitToRemote url="[controller:'atm', action: 'result']" update="resultId" valie="Go"/>
         <br/>
 
         <h3>Result:</h3>
 
         <div class="col-md-2 col-md-offset-5">
             <div class="panel panel-default">
-                <div class="panel-body">
+                <div class="panel-body" id="atmform">
                     <table class="table table-condensed">
                         <tbody id="resultId">
                         <div style="overflow:auto;">
@@ -122,12 +120,8 @@
                     </table>
                 </div>
             </div>
-        </div><br/>
+        </div>
     </div>
 </g:form>
-%{--
-<g:link action="ajax" elementId="ajax">Click me</g:link>--}%
-%{--
-<g:remoteLink action="ajax" id="1">Remote link</g:remoteLink>--}%
 </body>
 </html>
