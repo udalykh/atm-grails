@@ -8,7 +8,7 @@ class AtmController {
     def moneyStorage
 
     def index() {
-        Map<BankNote, Integer> response = [:]
+        def response = [:]
         try {
             String command = params["command"]
             String currency = params["currency"]
@@ -44,5 +44,6 @@ class AtmController {
     }
 
     def result() {
+
     }
 }
