@@ -89,14 +89,14 @@
 
         <div class="btn-group">
             <button type="button" name="backspace" id="backspace" class="btn btn-default">C</button>
-            %{--<a data-toggle="tooltip" data-placement="top" title="Click to submit the action">--}%
+        %{--<a data-toggle="tooltip" data-placement="top" title="Click to submit the action">--}%
             <g:actionSubmit value="GO" id="go" action="index" class="btn btn-primary"
                             title="Click to submit the action">
                 <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
             </g:actionSubmit>
         </div><br/>
 
-        <g:submitToRemote url="[controller:'atm', action: 'index']" update="resultId"
+        <g:submitToRemote url="[controller: 'atm', action: 'index']" update="resultId"
                           value="Go"/>
         <br/>
 
