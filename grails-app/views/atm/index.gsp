@@ -89,15 +89,12 @@
 
         <div class="btn-group">
             <button type="button" name="backspace" id="backspace" class="btn btn-default">C</button>
-        %{--<a data-toggle="tooltip" data-placement="top" title="Click to submit the action">--}%
-            <g:actionSubmit value="GO" id="go" action="index" class="btn btn-primary"
-                            title="Click to submit the action">
-                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span><br/>
-            </g:actionSubmit>
-        </div><br/>
+            <a data-toggle="tooltip" data-placement="top" title="Click to submit the action">
+                <g:submitToRemote url="[controller: 'atm', action: 'result']" name="go" id="go" class="btn btn-primary"
+                                  update="resultId"
+                                  value="GO"/>
+        </div><br/><br/>
 
-        <g:submitToRemote url="[controller: 'atm', action: 'index']" update="resultId"
-                          value="Go"/>
         <br/>
 
         <h3>Result:</h3>
@@ -108,14 +105,6 @@
                     <table class="table table-condensed">
                         <tbody id="resultId">
                         <div style="overflow:auto;" id="atmform">
-                            <g:if test="${error}">
-                                <tr>ERROR</tr>
-                            </g:if>
-                            <g:else>
-                                <g:each in="${response}">
-                                    <tr><td>${it.key} ${it.value}</td></tr>
-                                </g:each>
-                            </g:else>
                         </div>
                         </tbody>
                     </table>
