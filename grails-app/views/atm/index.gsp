@@ -96,17 +96,18 @@
             </g:actionSubmit>
         </div><br/>
 
-        <g:submitToRemote url="[controller:'atm', action: 'result']" update="resultId" valie="Go"/>
+        <g:submitToRemote url="[controller:'atm', action: 'index']" update="resultId"
+                          value="Go"/>
         <br/>
 
         <h3>Result:</h3>
 
         <div class="col-md-2 col-md-offset-5">
             <div class="panel panel-default">
-                <div class="panel-body" id="atmform">
+                <div class="panel-body">
                     <table class="table table-condensed">
                         <tbody id="resultId">
-                        <div style="overflow:auto;">
+                        <div style="overflow:auto;" id="atmform">
                             <g:if test="${error}">
                                 <tr>ERROR</tr>
                             </g:if>
