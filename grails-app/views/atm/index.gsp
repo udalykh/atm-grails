@@ -88,16 +88,15 @@
         <div style="margin-top: 15px;"></div>
 
         <div class="btn-group">
-            <button type="button" name="backspace" id="backspace" class="btn btn-default">C</button>
+            <button type="button" name="clear" id="clear" class="btn btn-default">C</button>
             <a data-toggle="tooltip" data-placement="top" title="Click to submit the action">
                 <g:submitToRemote url="[controller: 'atm', action: 'result']" name="go" id="go" class="btn btn-primary"
                                   update="resultId"
                                   value="GO"/>
-        </div><br/><br/>
-
+        </div><br/>
         <br/>
 
-        <h3>Result:</h3>
+        <h4>Result:</h4>
 
         <div class="col-md-2 col-md-offset-5">
             <div class="panel panel-default">
