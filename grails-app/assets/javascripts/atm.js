@@ -26,7 +26,6 @@ $(function () {
     selectorGroup3.slideUp();
     $('select#command').on('change', function () {
         var value = $(this).val();
-
         switch (value) {
             case 'REMAININGS':
                 selectorGroup1.hide();
