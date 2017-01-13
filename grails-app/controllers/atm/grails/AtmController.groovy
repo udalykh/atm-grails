@@ -8,6 +8,9 @@ class AtmController {
     def moneyStorage
 
     def index() {
+    }
+
+    def result() {
         def response = [:]
         try {
             String command = params["command"]
@@ -31,7 +34,7 @@ class AtmController {
             }
             if (!response) {
                 if (command == "REMAININGS") {
-                    [response: "EMPTY"]
+                    [response: ["": "EMPTY"]]
                 } else {
                     throw new AtmStateException('NULL CAPTURED')
                 }
@@ -41,9 +44,5 @@ class AtmController {
             log.error("Error while ATM operation: ${e.message}")
             [error: true]
         }
-    }
-
-    def result() {
-
     }
 }
