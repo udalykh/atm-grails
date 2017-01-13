@@ -34,7 +34,7 @@ class AtmController {
             }
             if (!response) {
                 if (command == "REMAININGS") {
-                    [response: ["": "EMPTY"]]
+                    [response: [:]]
                 } else {
                     throw new AtmStateException('NULL CAPTURED')
                 }
