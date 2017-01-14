@@ -6,7 +6,6 @@ import groovy.transform.ToString
 
 @ToString
 class MoneyDomain {
-
     Currency currency
     int value
     int number
