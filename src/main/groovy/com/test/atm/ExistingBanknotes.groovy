@@ -18,9 +18,7 @@ class ExistingBanknotes {
         exBank = exBank.sort().reverse()
     }
 
-    static void assertBanknote(assertCurrency, assertValue) {
-        if (!exBank.contains(new BankNote(assertCurrency, assertValue))) {
-            throw new AtmStateException('NOT EXISTING BANKNOTE')
-        }
+    static boolean assertBanknote(Currency assertCurrency, int assertValue) {
+        exBank.contains(new BankNote(assertCurrency, assertValue))
     }
 }
