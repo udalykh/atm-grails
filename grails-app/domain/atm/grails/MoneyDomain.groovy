@@ -4,7 +4,6 @@ import com.test.atm.Currency
 import com.test.atm.ExistingBanknotes
 
 class MoneyDomain {
-
     Currency currency
     int value
     int number
