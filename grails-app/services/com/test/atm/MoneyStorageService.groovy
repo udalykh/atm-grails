@@ -7,7 +7,11 @@ import grails.validation.ValidationException
 //@Transactional
 class MoneyStorageService {
     def listMoney() {
-        MoneyDomain.list()
+        def listedMoney = MoneyDomain.list()
+        def moneyMap = [:] as TreeMap
+        for (note in listedMoney) {
+            moneyMap.put(new BankNote(note.currency, note.value), note.number)
+        }
     }
 
     def putMoney(Currency currencyToPut, int valueToPut, int numberToPut) {
