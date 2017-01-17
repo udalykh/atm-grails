@@ -3,7 +3,9 @@ package com.test.atm
 import atm.grails.MoneyDomain
 import grails.transaction.Transactional
 import grails.validation.ValidationException
+import groovy.transform.ToString
 
+@ToString
 //@Transactional
 class MoneyStorageService {
     def listMoney() {
@@ -12,6 +14,7 @@ class MoneyStorageService {
         for (note in listedMoney) {
             moneyMap.put(new BankNote(note.currency, note.value), note.number)
         }
+        moneyMap
     }
 
     def putMoney(Currency currencyToPut, int valueToPut, int numberToPut) {
@@ -34,6 +37,7 @@ class MoneyStorageService {
         try {
             if (moneyToCheck.number == numberToPoll) {
                 moneyToCheck.delete()(failOnError: true, flush: true)
+                moneyToCheck.save()(failOnError: true, flush: true)
             } else {
                 moneyToCheck.number -= numberToPoll
                 moneyToCheck.save()(failOnError: true, flush: true)
