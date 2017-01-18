@@ -1,7 +1,6 @@
 package com.test.atm
 
 class DepositCommand implements AtmCommand {
-
     MoneyStorageService thisService
 
     DepositCommand(MoneyStorageService moneyService) {
