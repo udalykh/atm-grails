@@ -1,13 +1,14 @@
 package com.test.atm
 
-class RequestRemainings implements AtmCommand {
-    private final MoneyStorage moneyStorage
+import atm.grails.MoneyDomain
 
-    RequestRemainings(MoneyStorage moneyStorage) {
-        this.moneyStorage = moneyStorage
-    }
+class RequestRemainings implements AtmCommand {
 
     Map<BankNote, Integer> execute(String... arguments) {
-        return moneyStorage.getNotes()
+        def outMap = [:] as TreeMap
+        for (someNotes in MoneyDomain.list()) {
+            outMap.put(new BankNote(someNotes.currency, someNotes.value), someNotes.number)
+        }
+        outMap
     }
 }
