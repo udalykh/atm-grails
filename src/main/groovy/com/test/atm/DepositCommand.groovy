@@ -1,10 +1,11 @@
 package com.test.atm
 
 class DepositCommand implements AtmCommand {
-    private final MoneyStorage moneyStorage
 
-    DepositCommand(MoneyStorage moneyStorage) {
-        this.moneyStorage = moneyStorage
+    MoneyStorageService thisService
+
+    DepositCommand(MoneyStorageService moneyService) {
+        this.thisService = moneyService
     }
 
     Map<BankNote, Integer> execute(String... arguments) {
@@ -12,8 +13,7 @@ class DepositCommand implements AtmCommand {
         Currency currencyToPut = Currency.getCurrency(arguments[0])
         int valueToPut = AtmUtils.parseInt(arguments[1], 'ILLEGAL TYPING OF VALUE')
         int numberToPut = AtmUtils.parseInt(arguments[2], 'ILLEGAL TYPING OF NUMBER')
-
-        moneyStorage.addNotes(currencyToPut, valueToPut, numberToPut)
+        thisService.putMoney(currencyToPut, valueToPut, numberToPut)
         [(new BankNote(currencyToPut, valueToPut)): numberToPut]
     }
 }
