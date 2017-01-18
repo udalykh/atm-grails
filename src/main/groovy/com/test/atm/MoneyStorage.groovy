@@ -11,7 +11,7 @@ class MoneyStorage {
         for (someNotes in allMoney) {
             BankNote keyToAdd = new BankNote(someNotes.currency, someNotes.value)
             notes.compute(keyToAdd, { bankNote, oldNumber -> oldNumber == null ? someNotes.number : oldNumber + someNotes.number })
-            currencyAmount.compute(someNotes.currency, { banknoteKey, integerNumber -> integerNumber == null ? someNotes.value * someNotes.number : integerNumber + someNotes.number * someNotes.value })
+            currencyAmount.compute(someNotes.currency, { banknoteKey, integerNumber -> integerNumber == null ? someNotes.value * someNotes.number : integerNumber + someNotes.value * someNotes.number })
         }
     }
 
