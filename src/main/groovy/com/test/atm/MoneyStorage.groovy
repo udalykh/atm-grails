@@ -22,15 +22,6 @@ class MoneyStorage {
     boolean hasCurrency(Currency hasCurrency2) {
         return currencyAmount.containsKey(hasCurrency2)
     }
-    /*
-    void addNotes(Currency addCurrency, int addValue, int addNumber) {
-        ExistingBanknotes.assertBanknote(addCurrency, addValue)
-        BankNote keyToAdd = new BankNote(addCurrency, addValue)
-
-        notes.compute(keyToAdd, { bankNote, oldNumber -> oldNumber == null ? addNumber : oldNumber + addNumber })
-        currencyAmount.compute(addCurrency, { banknoteKey, integerNumber -> integerNumber == null ? addValue * addNumber : integerNumber + addNumber * addValue })
-    }
-    */
 
     void pollNotes(Currency pollCurrency, int pollValue, int pollNumber) {
         BankNote keyToPoll = new BankNote(pollCurrency, pollValue)
