@@ -1,9 +1,19 @@
 package com.test.atm
 
-class MoneyStorage {
+import atm.grails.MoneyDomain
 
+class MoneyStorage {
     def notes = [:] as TreeMap
     def currencyAmount = [:]
+
+    MoneyStorage() {
+        def allMoney = MoneyDomain.list()
+        for (someNotes in allMoney) {
+            BankNote keyToAdd = new BankNote(someNotes.currency, someNotes.value)
+            notes.compute(keyToAdd, { bankNote, oldNumber -> oldNumber == null ? someNotes.number : oldNumber + someNotes.number })
+            currencyAmount.compute(someNotes.currency, { banknoteKey, integerNumber -> integerNumber == null ? someNotes.value * someNotes.number : integerNumber + someNotes.number * someNotes.value })
+        }
+    }
 
     boolean hasNote(Currency hasCurrency, int hasValue) {
         return notes.containsKey(new BankNote(hasCurrency, hasValue))
@@ -12,13 +22,15 @@ class MoneyStorage {
     boolean hasCurrency(Currency hasCurrency2) {
         return currencyAmount.containsKey(hasCurrency2)
     }
-
+    /*
     void addNotes(Currency addCurrency, int addValue, int addNumber) {
         ExistingBanknotes.assertBanknote(addCurrency, addValue)
         BankNote keyToAdd = new BankNote(addCurrency, addValue)
+
         notes.compute(keyToAdd, { bankNote, oldNumber -> oldNumber == null ? addNumber : oldNumber + addNumber })
         currencyAmount.compute(addCurrency, { banknoteKey, integerNumber -> integerNumber == null ? addValue * addNumber : integerNumber + addNumber * addValue })
     }
+    */
 
     void pollNotes(Currency pollCurrency, int pollValue, int pollNumber) {
         BankNote keyToPoll = new BankNote(pollCurrency, pollValue)
