@@ -4,7 +4,6 @@ import com.test.atm.*
 import grails.converters.JSON
 
 class AtmController {
-    //def moneyStorage
     def moneyStorageService
 
     def index() {
