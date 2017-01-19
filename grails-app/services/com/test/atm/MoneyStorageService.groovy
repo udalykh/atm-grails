@@ -4,6 +4,7 @@ import atm.grails.MoneyDomain
 import grails.transaction.Transactional
 import grails.validation.ValidationException
 import groovy.transform.ToString
+import org.hibernate.StaleStateException
 
 @ToString
 //@Transactional
@@ -43,14 +44,17 @@ class MoneyStorageService {
     def pollMoney(Currency currencyToPoll, int valueToPoll, int numberToPoll) {
         def moneyToCheck = MoneyDomain.findByCurrencyAndValue(currencyToPoll, valueToPoll)
         try {
+            if(!moneyToCheck){
+                throw new AtmStateException('EMPTY?')
+            }
             if (moneyToCheck.number == numberToPoll) {
                 moneyToCheck.delete(failOnError: true, flush: true)
-                moneyToCheck.save(failOnError: true, flush: true)
+
             } else {
                 moneyToCheck.number -= numberToPoll
                 moneyToCheck.save(failOnError: true, flush: true)
             }
-        } catch (ValidationException e) {
+        } catch (Exception e) {
             throw new AtmStateException('CANNOT POLL')
         }
     }
