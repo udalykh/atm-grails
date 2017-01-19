@@ -54,7 +54,7 @@ class MoneyStorageService {
                 moneyToCheck.number -= numberToPoll
                 moneyToCheck.save(failOnError: true, flush: true)
             }
-        } catch (Exception e) {
+        } catch (ValidationException e) {
             throw new AtmStateException('CANNOT POLL')
         }
     }
