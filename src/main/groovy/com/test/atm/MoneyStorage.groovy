@@ -15,14 +15,6 @@ class MoneyStorage {
         }
     }
 
-    boolean hasNote(Currency hasCurrency, int hasValue) {
-        return notes.containsKey(new BankNote(hasCurrency, hasValue))
-    }
-
-    boolean hasCurrency(Currency hasCurrency2) {
-        return currencyAmount.containsKey(hasCurrency2)
-    }
-
     void pollNotes(Currency pollCurrency, int pollValue, int pollNumber) {
         BankNote keyToPoll = new BankNote(pollCurrency, pollValue)
         notes.compute(keyToPoll, { bankNote, oldNumber -> oldNumber == null ? 0 : oldNumber - pollNumber })
