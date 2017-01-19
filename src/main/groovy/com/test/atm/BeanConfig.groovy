@@ -12,7 +12,7 @@ class BeanConfig {
     }
 
     @Bean
-    moneyStorage() {
-        MoneyStorage moneyStorage
+    moneyStorageService() {
+        MoneyStorageService moneyStorageService
     }
 }
