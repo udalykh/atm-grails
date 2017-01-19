@@ -17,6 +17,14 @@ class MoneyStorageService {
         moneyMap
     }
 
+    boolean hasCurrency(Currency currency) {
+        MoneyDomain.findAllByCurrency(currency)
+    }
+
+    boolean hasNote(Currency currency, int value) {
+        MoneyDomain.findAllByCurrencyAndValue(currency, value)
+    }
+
     def putMoney(Currency currencyToPut, int valueToPut, int numberToPut) {
         def moneyToCheck = MoneyDomain.findByCurrencyAndValue(currencyToPut, valueToPut)
         try {
