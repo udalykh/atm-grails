@@ -6,7 +6,6 @@ import grails.validation.ValidationException
 import groovy.transform.ToString
 import org.hibernate.StaleStateException
 
-@ToString
 //@Transactional
 class MoneyStorageService {
     def listMoney() {
