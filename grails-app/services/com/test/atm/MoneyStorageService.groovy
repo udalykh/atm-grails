@@ -44,7 +44,7 @@ class MoneyStorageService {
     def pollMoney(Currency currencyToPoll, int valueToPoll, int numberToPoll) {
         def moneyToCheck = MoneyDomain.findByCurrencyAndValue(currencyToPoll, valueToPoll)
         try {
-            if(!moneyToCheck){
+            if (!moneyToCheck) {
                 throw new AtmStateException('NO SUCH BANKNOTE')
             }
             if (moneyToCheck.number == numberToPoll) {
