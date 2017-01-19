@@ -1,34 +1,35 @@
 package com.test.atm
 
-class WithdrawalCommand implements AtmCommand {
-    private final MoneyStorage moneyStorage
+import org.springframework.beans.factory.annotation.Autowired
 
-    WithdrawalCommand(MoneyStorage moneyStorage) {
-        this.moneyStorage = moneyStorage
+class WithdrawalCommand implements AtmCommand {
+    MoneyStorageService thisService
+
+    WithdrawalCommand(@Autowired MoneyStorageService moneyService) {
+        this.thisService = moneyService
     }
 
     Map<BankNote, Integer> execute(String... arguments) {
-        def outMap = [:] as TreeMap
+        Map<BankNote, Integer> outMap = [:] as TreeMap
         def numbersMap = [:]
         def exBankForWithdrawal = ExistingBanknotes.getExBank()
+        MoneyStorage moneyStorage = new MoneyStorage()
 
         AtmUtils.assertLengthCheck(2, arguments)
         Currency currencyToPoll = Currency.getCurrency(arguments[0])
         int amountToGet = AtmUtils.parseInt(arguments[1], 'ILLEGAL TYPING OF AMOUNT')
 
-        //Checking whether the money storage contains this currency
-        if (!moneyStorage.hasCurrency(currencyToPoll)) {
+        if (!thisService.hasCurrency(currencyToPoll)) {
             throw new AtmStateException('NO SUCH CURRENCY')
         }
 
-        //Checking whether it is possible to take a certain amount
         int currencyAmount = moneyStorage.getCurrencyAmount(currencyToPoll)
         if (currencyAmount >= amountToGet) {
             int checkAmount = amountToGet
             for (BankNote banknoteToCheck : exBankForWithdrawal) {
                 if (banknoteToCheck.getCurrency() == currencyToPoll && checkAmount >= banknoteToCheck.getValue()) {
                     int valueToCheck = banknoteToCheck.getValue()
-                    if (moneyStorage.hasNote(currencyToPoll, valueToCheck)) {
+                    if (thisService.hasNote(currencyToPoll, valueToCheck)) {
                         int remainingNumber = moneyStorage.getNoteNumber(new BankNote(currencyToPoll, valueToCheck))
                         int divisionCheck = checkAmount / valueToCheck
                         if (remainingNumber > divisionCheck) {
@@ -42,18 +43,20 @@ class WithdrawalCommand implements AtmCommand {
                 }
             }
 
-            //Withdrawal operation
             if (!checkAmount) {
+                println 'NOW'
                 for (BankNote banknoteToGet : exBankForWithdrawal) {
                     int valueToPoll = banknoteToGet.getValue()
                     if (numbersMap.containsKey(banknoteToGet) && numbersMap.get(banknoteToGet) != 0) {
                         int numberToPoll = (Integer) numbersMap.get(banknoteToGet)
-                        if (moneyStorage.hasNote(currencyToPoll, valueToPoll)) {
+                        if (thisService.hasNote(currencyToPoll, valueToPoll)) {
                             moneyStorage.pollNotes(currencyToPoll, valueToPoll, numberToPoll)
+                            thisService.pollMoney(currencyToPoll, valueToPoll, numberToPoll)
                             outMap.put(new BankNote(currencyToPoll, valueToPoll), numberToPoll)
                         }
                     }
                 }
+                println 'DONE'
                 return outMap
             }
         }
