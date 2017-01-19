@@ -45,7 +45,7 @@ class MoneyStorageService {
         def moneyToCheck = MoneyDomain.findByCurrencyAndValue(currencyToPoll, valueToPoll)
         try {
             if(!moneyToCheck){
-                throw new AtmStateException('EMPTY?')
+                throw new AtmStateException('NO SUCH BANKNOTE')
             }
             if (moneyToCheck.number == numberToPoll) {
                 moneyToCheck.delete(failOnError: true, flush: true)
