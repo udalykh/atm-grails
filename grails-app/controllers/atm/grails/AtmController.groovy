@@ -8,10 +8,6 @@ class AtmController {
     def moneyStorageService
 
     def index() {
-        /*
-        def allMoney = MoneyDomain.list()
-        [allMoney: allMoney]
-        */
     }
 
     def result() {
