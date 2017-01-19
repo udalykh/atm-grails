@@ -44,7 +44,6 @@ class WithdrawalCommand implements AtmCommand {
             }
 
             if (!checkAmount) {
-                println 'NOW'
                 for (BankNote banknoteToGet : exBankForWithdrawal) {
                     int valueToPoll = banknoteToGet.getValue()
                     if (numbersMap.containsKey(banknoteToGet) && numbersMap.get(banknoteToGet) != 0) {
@@ -56,7 +55,6 @@ class WithdrawalCommand implements AtmCommand {
                         }
                     }
                 }
-                println 'DONE'
                 return outMap
             }
         }
