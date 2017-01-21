@@ -15,7 +15,7 @@ class AtmCommandFactory {
     AtmCommand create(String action) {
         switch (CommandType.getCommandType(action)) {
             case CommandType.REMAININGS:
-                return new RequestRemainings()
+                return new RequestRemainings(moneyService)
             case CommandType.ADD:
                 return new DepositCommand(moneyService)
             case CommandType.WITHDRAW:
