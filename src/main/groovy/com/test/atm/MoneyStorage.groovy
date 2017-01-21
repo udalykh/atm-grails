@@ -35,7 +35,7 @@ class MoneyStorage {
         if (!numberToGet) {
             throw new AtmStateException('NULL BANKNOTE NUMBER')
         }
-        return (Integer) numberToGet
+        (Integer) numberToGet
     }
 
     int getCurrencyAmount(Currency currencyKey) {
@@ -43,7 +43,7 @@ class MoneyStorage {
         if (!amountToGet) {
             throw new AtmStateException('NULL CURRENCY AMOUNT')
         }
-        return (Integer) amountToGet
+        (Integer) amountToGet
     }
 }
 
