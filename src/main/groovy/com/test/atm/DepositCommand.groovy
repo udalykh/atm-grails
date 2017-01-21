@@ -2,7 +2,7 @@ package com.test.atm
 
 import org.springframework.beans.factory.annotation.Autowired
 
-class DepositCommand implements AtmCommand {
+class DepositCommand{
     MoneyStorageService thisService
 
     DepositCommand(@Autowired MoneyStorageService moneyService) {
