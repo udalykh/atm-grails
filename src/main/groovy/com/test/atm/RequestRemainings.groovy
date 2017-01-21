@@ -1,6 +1,5 @@
 package com.test.atm
 
-import atm.grails.MoneyDomain
 import org.springframework.beans.factory.annotation.Autowired
 
 class RequestRemainings{
