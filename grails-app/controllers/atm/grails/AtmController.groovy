@@ -19,7 +19,7 @@ class AtmController {
             String amount = params["amount"]
             switch (CommandType.getCommandType(command)) {
                 case CommandType.REMAININGS:
-                    response = new RequestRemainings().execute()
+                    response = new RequestRemainings(moneyStorageService).execute()
                     break
                 case CommandType.ADD:
                     response = new DepositCommand(moneyStorageService).execute(currency, value, number)
@@ -28,7 +28,7 @@ class AtmController {
                     response = new WithdrawalCommand(moneyStorageService).execute(currency, amount)
                     break
                 default:
-                    response = new RequestRemainings().execute()
+                    response = new RequestRemainings(moneyStorageService).execute()
                     break
             }
             if (!response) {
