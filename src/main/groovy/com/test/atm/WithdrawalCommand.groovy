@@ -2,7 +2,7 @@ package com.test.atm
 
 import org.springframework.beans.factory.annotation.Autowired
 
-class WithdrawalCommand implements AtmCommand {
+class WithdrawalCommand{
     MoneyStorageService thisService
 
     WithdrawalCommand(@Autowired MoneyStorageService moneyService) {
