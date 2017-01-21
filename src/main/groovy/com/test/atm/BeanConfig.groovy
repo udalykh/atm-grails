@@ -7,11 +7,6 @@ import org.springframework.context.annotation.Configuration
 class BeanConfig {
 
     @Bean
-    atmCommandFactory() {
-        AtmCommandFactory atmCommandFactory
-    }
-
-    @Bean
     moneyStorageService() {
         MoneyStorageService moneyStorageService
     }
