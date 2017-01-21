@@ -6,18 +6,20 @@ class AtmCommandFactory {
 
     private final MoneyStorage moneyStorage
 
-    AtmCommandFactory(@Autowired MoneyStorage moneyStorage) {
-        this.moneyStorage = moneyStorage
+    def moneyService = new MoneyStorageService()
+
+    AtmCommandFactory() {
+        this.moneyStorage = null
     }
 
     AtmCommand create(String action) {
         switch (CommandType.getCommandType(action)) {
             case CommandType.REMAININGS:
-                return new RequestRemainings(moneyStorage)
+                return new RequestRemainings()
             case CommandType.ADD:
-                return new DepositCommand(moneyStorage)
+                return new DepositCommand(moneyService)
             case CommandType.WITHDRAW:
-                return new WithdrawalCommand(moneyStorage)
+                return new WithdrawalCommand(moneyService)
             default:
                 throw new AtmStateException("Cannot find a command for this action $action")
         }
