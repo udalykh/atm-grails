@@ -6,23 +6,20 @@ import grails.validation.ValidationException
 import groovy.transform.ToString
 import org.hibernate.StaleStateException
 
-//@Transactional
 class MoneyStorageService {
+
     def listMoney() {
-        def listedMoney = MoneyDomain.list()
-        def moneyMap = [:] as TreeMap
-        for (note in listedMoney) {
-            moneyMap.put(new BankNote(note.currency, note.value), note.number)
-        }
-        moneyMap
+        MoneyDomain.list().collectEntries { note ->
+            [(new BankNote(note.currency, note.value)): note.number]
+        } as TreeMap
     }
 
     boolean hasCurrency(Currency currency) {
-        MoneyDomain.findAllByCurrency(currency)
+        MoneyDomain.findByCurrency(currency)
     }
 
     boolean hasNote(Currency currency, int value) {
-        MoneyDomain.findAllByCurrencyAndValue(currency, value)
+        MoneyDomain.findByCurrencyAndValue(currency, value)
     }
 
     def putMoney(Currency currencyToPut, int valueToPut, int numberToPut) {
@@ -30,12 +27,12 @@ class MoneyStorageService {
         try {
             if (moneyToCheck) {
                 moneyToCheck.number += numberToPut
-                moneyToCheck.save(failOnError: true, flush: true)
+                moneyToCheck.save(flush: true)
             } else {
                 def moneyToDeposit = new MoneyDomain(currency: currencyToPut, value: valueToPut, number: numberToPut)
-                moneyToDeposit.save(failOnError: true, flush: true)
+                moneyToDeposit.save(flush: true)
             }
-        } catch (ValidationException e) {
+        } catch (ValidationException ignore) {
             throw new AtmStateException('CANNOT PUT')
         }
     }
@@ -47,13 +44,13 @@ class MoneyStorageService {
                 throw new AtmStateException('NO SUCH BANKNOTE')
             }
             if (moneyToCheck.number == numberToPoll) {
-                moneyToCheck.delete(failOnError: true, flush: true)
+                moneyToCheck.delete(flush: true)
 
             } else {
                 moneyToCheck.number -= numberToPoll
-                moneyToCheck.save(failOnError: true, flush: true)
+                moneyToCheck.save(flush: true)
             }
-        } catch (ValidationException e) {
+        } catch (ValidationException ignore) {
             throw new AtmStateException('CANNOT POLL')
         }
     }
