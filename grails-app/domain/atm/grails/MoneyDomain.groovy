@@ -14,4 +14,8 @@ class MoneyDomain {
         }
         number min: 0
     }
+
+    static mapping = {
+        currency index: 'money_currency_idx'
+    }
 }
