@@ -1,7 +1,10 @@
 package com.test.atm
 
+import atm.grails.ValidNotesDomain
+
 class ExistingBanknotes {
     static def exBank = []
+
     static {
         [
                 USD: [100, 50, 20, 10, 5, 2, 1],
@@ -19,6 +22,6 @@ class ExistingBanknotes {
     }
 
     static boolean assertBanknote(Currency assertCurrency, int assertValue) {
-        exBank.contains(new BankNote(assertCurrency, assertValue))
+        ValidNotesDomain.findByCurrencyAndValue(assertCurrency, assertValue)
     }
 }
