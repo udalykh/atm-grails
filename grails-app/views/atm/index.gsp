@@ -35,6 +35,7 @@
             <g:select name="currency" class="form-control" from="${com.test.atm.Currency.values()}">
             </g:select>
         </span>
+
         <div style="margin-top: 10px;"></div>
 
         <div class="form-group">
