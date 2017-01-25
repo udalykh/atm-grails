@@ -33,9 +33,9 @@
         <span class="label-div">
             <label id="currencylabel" for="currency">Currency:</label>
             <g:select name="currency" class="form-control" from="${com.test.atm.Currency.values()}">
-            </g:select><br/>
+            </g:select>
         </span>
-        <br/>
+        <div style="margin-top: 10px;"></div>
 
         <div class="form-group">
             <label id="valuelabel" for="value">Value:</label>
@@ -55,7 +55,7 @@
             <g:field class="form-control" type="number" name="amount" id="amount" min="0"
                      placeholder="Amount of currency"/></div>
         <g:set var="amountchange" value="false"/>
-        <br/>
+        <div style="margin-top: 10px;"></div>
 
         <div class="keyboard">
             <div class="btn-group">
