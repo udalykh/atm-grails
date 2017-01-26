@@ -2,7 +2,7 @@ package com.test.atm
 
 import org.springframework.beans.factory.annotation.Autowired
 
-class WithdrawalCommand{
+class WithdrawalCommand {
     MoneyStorageService thisService
 
     WithdrawalCommand(@Autowired MoneyStorageService moneyService) {
@@ -12,7 +12,7 @@ class WithdrawalCommand{
     Map<BankNote, Integer> execute(String... arguments) {
         Map<BankNote, Integer> outMap = [:] as TreeMap
         def numbersMap = [:]
-        def exBankForWithdrawal = ExistingBanknotes.getExBank()
+        def exBankForWithdrawal = ExistingBanknotes.getBank()
         MoneyStorage moneyStorage = new MoneyStorage()
 
         AtmUtils.assertLengthCheck(2, arguments)
