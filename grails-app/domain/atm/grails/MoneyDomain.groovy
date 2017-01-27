@@ -10,7 +10,7 @@ class MoneyDomain {
     static constraints = {
         currency nullable: false
         value min: 0, validator: { int val, MoneyDomain obj ->
-            ValidNotesDomain.findByCurrencyAndValue(obj.currency, val) as Boolean
+            ExistingBanknotes.assertBankNotes(obj.currency, val)
         }
         number min: 0
     }
