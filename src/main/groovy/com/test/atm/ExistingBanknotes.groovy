@@ -3,9 +3,9 @@ package com.test.atm
 import atm.grails.ValidNotesDomain
 
 class ExistingBanknotes {
-    static def exBank = []
 
     static BankNote[] getBank() {
+        def exBank = []
         def z = ValidNotesDomain.list()
         z.each { it ->
             exBank.add(new BankNote(it.currency, it.value))
