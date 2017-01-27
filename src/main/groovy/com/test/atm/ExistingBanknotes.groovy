@@ -12,8 +12,4 @@ class ExistingBanknotes {
         }
         exBank = exBank.sort().reverse()
     }
-
-    static boolean assertBanknote(Currency assertCurrency, int assertValue) {
-        ValidNotesDomain.findByCurrencyAndValue(assertCurrency, assertValue)
-    }
 }
