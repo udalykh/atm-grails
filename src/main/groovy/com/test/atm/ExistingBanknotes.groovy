@@ -3,7 +3,6 @@ package com.test.atm
 import atm.grails.ValidNotesDomain
 
 class ExistingBanknotes {
-
     static BankNote[] getBank() {
         def exBank = []
         def z = ValidNotesDomain.list()
