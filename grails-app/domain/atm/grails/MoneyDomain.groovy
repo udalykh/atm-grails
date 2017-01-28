@@ -1,18 +1,19 @@
 package atm.grails
 
+import com.test.atm.AtmStateException
 import com.test.atm.Currency
-import com.test.atm.ExistingBanknotes
 
 class MoneyDomain {
     Currency currency
     int value
     int number
     static constraints = {
-        currency nullable: false
-        value min: 0, validator: { int val, MoneyDomain obj ->
-            (ValidNotesDomain.findByCurrencyAndValue(obj.currency, val)) as boolean
+        currency validator: { currency -> if (!currency) throw new AtmStateException("INVALID CURRENCY") }
+        value validator: { int val, MoneyDomain obj ->
+            if (!ValidNotesDomain.findByCurrencyAndValue(obj.currency, val))
+                throw new AtmStateException("INVALID VALUE")
         }
-        number min: 0
+        number validator: { number -> if (number < 0) throw new AtmStateException("INVALID NUMBER") }
     }
 
     static mapping = {
