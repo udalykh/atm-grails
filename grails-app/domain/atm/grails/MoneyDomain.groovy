@@ -8,12 +8,21 @@ class MoneyDomain {
     int value
     int number
     static constraints = {
-        currency validator: { currency -> if (!currency) throw new AtmStateException("INVALID CURRENCY") }
-        value validator: { int val, MoneyDomain obj ->
-            if (!ValidNotesDomain.findByCurrencyAndValue(obj.currency, val))
-                throw new AtmStateException("INVALID VALUE")
+        currency validator: { currency ->
+            if (!currency) {
+                return 'validation.invalidCurrency'
+            }
         }
-        number validator: { number -> if (number < 0) throw new AtmStateException("INVALID NUMBER") }
+        value validator: { int val, MoneyDomain obj ->
+            if (!ValidNotesDomain.findByCurrencyAndValue(obj.currency, val)) {
+                return 'validation.invalidValue'
+            }
+        }
+        number validator: { number ->
+            if (number < 0) {
+                return 'validation.invalidNumber'
+            }
+        }
     }
 
     static mapping = {
