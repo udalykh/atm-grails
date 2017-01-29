@@ -1,6 +1,5 @@
 package atm.grails
 
-import com.test.atm.AtmStateException
 import com.test.atm.Currency
 
 class MoneyDomain {
